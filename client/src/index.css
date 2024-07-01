@@ -1,0 +1,16 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  color: blueviolet;
+}
+
+/*loader*/
+.spinner{
+height: 1000vh;
+display: flex;
+align-items: center;
+justify-content: center;
+z-index: 9999;
+background-color: rgb(0,0,0,0.383);
+}
