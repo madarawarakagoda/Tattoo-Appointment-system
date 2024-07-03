@@ -1,6 +1,8 @@
 import React from "react";
 import "../styles/RegisterStyles.css";
 import { Form, Input,message } from "antd";
+import { useDispatch} from 'react-redux';
+import { showLoading, hideLoading } from "../redux/features/alertSlice";
 import { Link,useNavigate} from "react-router-dom";
 import axios from 'axios'
 
@@ -8,10 +10,11 @@ import axios from 'axios'
 
 const Login = () => {
   const navigate = useNavigate();
-
+  const Dispatch = useDispatch();
   //form handler
   const onfinishHandler = async (values) => {
     try {
+      Dispatch(showLoading());
 
       const res = await axios.post("/api/v1/user/login", values);
       if (res.data.success) {
@@ -22,6 +25,7 @@ const Login = () => {
         message.error(res.data.message);
       }
     } catch (error) {
+      Dispatch(hideLoading());
       console.log(error);
       message.error("something went wrong");
     }
@@ -53,6 +57,11 @@ const Login = () => {
 };
 
 export default Login;
+
+
+
+
+
 
 
 
