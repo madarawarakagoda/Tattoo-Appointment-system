@@ -1,3 +1,4 @@
+
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import Login from "./pages/Login";
@@ -17,22 +18,22 @@ function App() {
           <Route 
           path="/"
            element={
-           
-            <HomePage />
-            
+         
+<HomePage />
+         
           } 
           />
           <Route path="/login"
            element={
+         
+<Login />
           
-                  <Login />
-            
          } />
           <Route 
           path="/register"
            element={
-         
-                 <Register />
+     
+ <Register />
            
         } />
         </Routes>
@@ -43,6 +44,3 @@ function App() {
 }
 
 export default App;
-
-
-
