@@ -1,8 +1,10 @@
-import React, { useEffect } from "react";
-import axios from "axios";
+
+import React from "react";
 import '../styles/LayoutStyles.css';
+import { adminMenu,userMenu } from "../Data/data";
+import axios from "axios";
+import { useEffect } from "react";
 import { Layout } from "antd";
-import { SidebarMenu } from "../Data/data";
 import { Link, useLocation } from 'react-router-dom';
 import { useSelector } from "react-redux";
 
@@ -30,6 +32,8 @@ const HomePage = () => {
 
     const { user } = useSelector(state => state.user);
     const location = useLocation();
+    //redering menu List
+    const SidebarMenu = user?.isAdmin ? adminMenu : userMenu;
     return (
         <Layout>
             <div className='main'>
