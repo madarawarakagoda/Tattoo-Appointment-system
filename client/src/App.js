@@ -20,10 +20,9 @@ function App() {
           <Route 
           path="/"
            element={
-      <ProtectedRoute>
+      
         <HomePage />
-      </ProtectedRoute>
-
+      
        
 
          
@@ -31,19 +30,18 @@ function App() {
           />
           <Route path="/login"
            element={
-            <PublicRoute>
+           
          <Login />
-            </PublicRoute>
-   
+            
 
           
          } />
           <Route 
           path="/register"
            element={
-     <PublicRoute>
+    
   <Register />
-     </PublicRoute>
+    
  
            
         } />
